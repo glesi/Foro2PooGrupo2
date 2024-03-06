@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author JC
+ * @author Equipo 2
  */
 public class RegistroDeVentas {
 
