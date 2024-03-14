@@ -10,6 +10,8 @@ import com.foro2.procesos.Inventario;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author glesi
@@ -21,9 +23,43 @@ public class Main {
     public static void main(String[] args) {
         List<Equipo> equipos = new ArrayList<>();
         Inventario inventario = new Inventario();
-        
-        //Agregar menu con las diferentes opciones
-        
+
+        // Agregar un menú con las diferentes opciones
+        while (true) {
+            try {
+                int opcion = Integer.parseInt(JOptionPane.showInputDialog("Menu\n1. Registrar equipo\n2. Ver equipos\n3. Salir"));
+
+                switch (opcion) {
+                    case 1:
+                        registrarEquipo(equipos);
+                        break;
+
+                    case 2:
+                        verEquipos(equipos);
+                        break;
+
+                    case 3:
+                        System.exit(0);
+                        break;
+
+                    default:
+                        JOptionPane.showMessageDialog(null, "Opción inválida, intente de nuevo");
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Ingrese un número válido");
+            }
+        }
     }
-    
+
+    // Método para registrar un equipo
+    private static void registrarEquipo(List<Equipo> equipos) {
+        // Aquí iría la lógica para registrar un equipo
+        JOptionPane.showMessageDialog(null, "Registrar equipo");
+    }
+
+    // Método para ver los equipos
+    private static void verEquipos(List<Equipo> equipos) {
+        // Aquí iría la lógica para mostrar los equipos
+        JOptionPane.showMessageDialog(null, "Ver equipos");
+    }
 }
