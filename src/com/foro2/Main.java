@@ -55,11 +55,28 @@ public class Main {
     private static void registrarEquipo(List<Equipo> equipos) {
         // Aquí iría la lógica para registrar un equipo
         JOptionPane.showMessageDialog(null, "Registrar equipo");
+        String[] opciones = {"Desktop", "Laptop", "Tablet"};
+        String tipo = (String) JOptionPane.showInputDialog(null, "Selecciona el tipo de equipo:", "Registro de equipo",
+                JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+
+        String fabricante = JOptionPane.showInputDialog("Ingrese el fabricante:");
+        String modelo = JOptionPane.showInputDialog("Ingrese el modelo:");
+        String microprocesador = JOptionPane.showInputDialog("Ingrese el microprocesador:");
+
+        Equipo equipo = new Equipo(fabricante, modelo, microprocesador);
+        equipos.add(equipo);
+        
+        JOptionPane.showMessageDialog(null, "Registrar equipo");
     }
 
     // Método para ver los equipos
     private static void verEquipos(List<Equipo> equipos) {
         // Aquí iría la lógica para mostrar los equipos
+        JOptionPane.showMessageDialog(null, "Ver equipos");
+        StringBuilder mensaje = new StringBuilder();
+        equipos.forEach((equipo) -> {
+            mensaje.append(equipo).append("\n\n");
+        });
         JOptionPane.showMessageDialog(null, "Ver equipos");
     }
 }
