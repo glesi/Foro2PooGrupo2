@@ -19,11 +19,16 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        // TODO se mandara a llamar la clase menu principal
         List<Equipo> equipos = new ArrayList<>();
         Inventario inventario = new Inventario();
         
         //Agregar menu con las diferentes opciones
+        inventario.agregarEquipo("2", equipos);
+        inventario.agregarEquipo("2", equipos);
         
+        
+        inventario.verEquipos("2", equipos);
     }
     
 }
