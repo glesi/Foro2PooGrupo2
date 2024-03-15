@@ -45,6 +45,7 @@ public class Inventario {
         );
 
         laptops.add(laptop);
+        JOptionPane.showMessageDialog(null, "Equipo agregado exitosamente", "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void verEquipos(int opcion, List<Equipo> equipos) {
