@@ -117,7 +117,7 @@ public class Inventario {
         sb.append("<h1>Desktops</h1>");
         sb.append("<table>");
 
-        for (Equipo equipo : desktops) {
+        for (Equipo equipo : Desktops) {
             if(equipo instanceof Desktop){
                 Desktop desktop = (Desktop) equipo;
                 sb.append("<tr><td><strong>Fabricante:</strong></td><td>").append(desktop.getFabricante()).append("</td></tr>");
@@ -171,7 +171,7 @@ public class Inventario {
                 sb.append("<tr><td><strong>Fabricante:</strong></td><td>").append(lap.getFabricante()).append("</td></tr>");
                 sb.append("<tr><td><strong>Modelo:</strong></td><td>").append(lap.getModelo()).append("</td></tr>");
                 sb.append("<tr><td><strong>Microprocesador:</strong></td><td>").append(lap.gettMicroprocesador()).append("</td></tr>");
-                sb.append("<tr><td><strong>Tamaño diagonal de pantalla:</strong></td><td>").append(lap.getdiagonalPantalla()).append("</td></tr>");
+                sb.append("<tr><td><strong>Tamaño diagonal de pantalla:</strong></td><td>").append(lap.gettamañoPatalla()).append("</td></tr>");
                 sb.append("<tr><td><strong>¿Capacitiva/Resistiva?:</strong></td><td>").append(lap.getcapacitivaResistiva ()).append("</td></tr>");
                 sb.append("<tr><td><strong>Tamaño memoria NAND:</strong></td><td>").append(lap.gettamañoMemoriaNAND ()).append("</td></tr>");
                 sb.append("<tr><td><strong>Sistema Operativo:</strong></td><td>").append(lap.getsistemaOperativo()).append("</td></tr>");
