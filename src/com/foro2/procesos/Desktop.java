@@ -7,7 +7,7 @@ package com.foro2.procesos;
 
 /**
  *
- * @author glesi
+ * @author JC
  */
 public class Desktop extends Equipo{
     
