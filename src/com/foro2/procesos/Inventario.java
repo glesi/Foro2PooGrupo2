@@ -16,7 +16,8 @@ public class Inventario {
 
     public void agregarEquipo(int equipo, List<Equipo> equipos) {
         switch (equipo) {
-            case 1:
+            case 1: //Desktop
+                registrarDesktop(equipos);
                 break;
             case 2: //Laptop
                 registrarLaptop(equipos);
@@ -26,6 +27,30 @@ public class Inventario {
                 break;
         }
     }
+    
+    private void registrarDesktop(List<Equipo> desktops) {
+        // Pedir los datos al usuario    
+        String nombreFabricante = JOptionPane.showInputDialog("Ingrese el nombre del fabricante:");
+        String nombreModelo = JOptionPane.showInputDialog("Ingrese el nombre del modelo:");
+        String microprocesador = JOptionPane.showInputDialog("Ingrese el microprocesador:");
+        String memoria = JOptionPane.showInputDialog("Ingrese la memoria:");
+        String tarjetaGrafica = JOptionPane.showInputDialog("Ingrese la tarjeta gráfica:");
+        String tamañoTorre = JOptionPane.showInputDialog("Ingrese el tamaño de la torre:");
+        String capacidadDiscoDuro = JOptionPane.showInputDialog("Ingrese la capacidad del disco duro:");
+    
+        Desktop desktop = new Desktop(
+                memoria,
+                tarjetaGrafica,
+                tamañoTorre,
+                Double.parseDouble(capacidadDiscoDuro),
+                nombreFabricante,
+                nombreModelo,
+                microprocesador
+        );
+    
+        desktops.add(desktop);
+        JOptionPane.showMessageDialog(null, "Equipo agregado exitosamente", "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
+    }    
 
     private void registrarLaptop(List<Equipo> laptops) {
         // Pedir los datos al usuario    
@@ -76,6 +101,7 @@ public class Inventario {
     public void verEquipos(int opcion, List<Equipo> equipos) {
         switch (opcion) {
             case 1://Desktop
+            verDesktops(equipos);
                 break;
             case 2://Laptop
                 verLaptops(equipos);
@@ -85,6 +111,31 @@ public class Inventario {
                 break;
         }
     }
+
+    private void verDesktops(List<Equipo> Desktops) {    
+        StringBuilder sb = new StringBuilder("<html><body>");
+        sb.append("<h1>Desktops</h1>");
+        sb.append("<table>");
+
+        for (Equipo equipo : desktops) {
+            if(equipo instanceof Desktop){
+                Desktop desktop = (Desktop) equipo;
+                sb.append("<tr><td><strong>Fabricante:</strong></td><td>").append(desktop.getFabricante()).append("</td></tr>");
+                sb.append("<tr><td><strong>Modelo:</strong></td><td>").append(desktop.getModelo()).append("</td></tr>");
+                sb.append("<tr><td><strong>Microprocesador:</strong></td><td>").append(desktop.gettMicroprocesador()).append("</td></tr>");
+                sb.append("<tr><td><strong>Memoria:</strong></td><td>").append(desktop.getMemoria()).append("</td></tr>");
+                sb.append("<tr><td><strong>Tarjeta Gráfica:</strong></td><td>").append(desktop.getTarjetaGrafica()).append("</td></tr>");
+                sb.append("<tr><td><strong>Tamaño de la Torre:</strong></td><td>").append(desktop.getTamañoTorre()).append("</td></tr>");
+                sb.append("<tr><td><strong>Capacidad de Disco Duro:</strong></td><td>").append(desktop.getCapacidadDiscoDuro()).append("</td></tr>");
+                sb.append("<tr><td colspan='2'><hr></td></tr>");
+            }     
+        }
+
+        sb.append("</table></body></html>");
+
+    JOptionPane.showMessageDialog(null, sb.toString(), "Detalles de los Desktops", JOptionPane.INFORMATION_MESSAGE);
+}
+
 
     private void verLaptops(List<Equipo> laptops) {    
         StringBuilder sb = new StringBuilder("<html><body>");
