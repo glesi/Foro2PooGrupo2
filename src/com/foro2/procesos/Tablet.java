@@ -60,3 +60,4 @@ public class Tablet extends Equipo {
     public String toString (){
         return "Tablet{fabricante=" + fabricante + ", modelo=" + modelo + ", microprocesador=" + microprocesador + ", diagonalPantalla=" + diagonalPantalla + ", capacitivaResistiva=" + capacitivaResistiva + ",tamañoMemoriaNAND=" + tamañoMemoriaNAND + ", sistemaOperativo=" + sistemaOperativo + '}';
     } 
+}

@@ -21,7 +21,8 @@ public class Inventario {
             case 2: //Laptop
                 registrarLaptop(equipos);
                 break;
-            case 3:
+            case 3: //Tablet
+                registrarTablet(equipos);
                 break;
         }
     }
@@ -47,6 +48,30 @@ public class Inventario {
         laptops.add(laptop);
         JOptionPane.showMessageDialog(null, "Equipo agregado exitosamente", "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
     }
+    
+    private void registrarTablet(List<Equipo> Tablets) {
+        // Pedir los datos al usuario    
+        String nombreFabricante = JOptionPane.showInputDialog("Ingrese el nombre del fabricante:");
+        String nombreModelo = JOptionPane.showInputDialog("Ingrese el nombre del modelo:");
+        String microprocesador = JOptionPane.showInputDialog("Ingrese el microprocesador:");
+        String diagonalPantalla = JOptionPane.showInputDialog("Ingrese Tamaño diagonal de pantalla:");
+        String capacitivaResistiva = JOptionPane.showInputDialog("Ingrese ¿Capacitiva/Resistiva?:");
+        String tamañoMemoriaNAND = JOptionPane.showInputDialog("Ingrese el Tamaño memoria NAND:");
+        String sistemaOperativo = JOptionPane.showInputDialog("Ingrese Sistema Operativo:");
+
+        Tablet tablet = new Tablet (
+                diagonalPantalla,
+                Double.parseDouble(capacitivaResistiva),
+                Double.parseDouble(tamañoMemoriaNAND),
+                Double.parseDouble(sistemaOperativo),
+                nombreFabricante,
+                nombreModelo,
+                microprocesador
+        );
+
+        Tablets.add(tablet);
+        JOptionPane.showMessageDialog(null, "Equipo agregado exitosamente", "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
+    }
 
     public void verEquipos(int opcion, List<Equipo> equipos) {
         switch (opcion) {
@@ -56,6 +81,7 @@ public class Inventario {
                 verLaptops(equipos);
                 break;
             case 3://Tablet
+                verTablets(equipos);
                 break;
         }
     }
@@ -82,4 +108,31 @@ public class Inventario {
         
         JOptionPane.showMessageDialog(null, sb.toString(), "Detalles de las Laptops", JOptionPane.INFORMATION_MESSAGE);
     }
+    
+    private void verTablets(List<Equipo> tablets) {    
+        StringBuilder sb = new StringBuilder("<html><body>");
+        sb.append("<h1>Tablets</h1>");
+        sb.append("<table>");
+
+        for (Equipo equipo : tablets) {
+            if(equipo instanceof Tablet){
+                Tablet lap = (Tablet) equipo;
+                sb.append("<tr><td><strong>Fabricante:</strong></td><td>").append(lap.getFabricante()).append("</td></tr>");
+                sb.append("<tr><td><strong>Modelo:</strong></td><td>").append(lap.getModelo()).append("</td></tr>");
+                sb.append("<tr><td><strong>Microprocesador:</strong></td><td>").append(lap.gettMicroprocesador()).append("</td></tr>");
+                sb.append("<tr><td><strong>Tamaño diagonal de pantalla:</strong></td><td>").append(lap.getdiagonalPantalla()).append("</td></tr>");
+                sb.append("<tr><td><strong>¿Capacitiva/Resistiva?:</strong></td><td>").append(lap.getcapacitivaResistiva ()).append("</td></tr>");
+                sb.append("<tr><td><strong>Tamaño memoria NAND:</strong></td><td>").append(lap.gettamañoMemoriaNAND ()).append("</td></tr>");
+                sb.append("<tr><td><strong>Sistema Operativo:</strong></td><td>").append(lap.getsistemaOperativo()).append("</td></tr>");
+                sb.append("<tr><td colspan='2'><hr></td></tr>");
+            }     
+        }
+
+        sb.append("</table></body></html>");
+        
+        JOptionPane.showMessageDialog(null, sb.toString(), "Detalles de las Tablets", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    
+    
 }
