@@ -12,11 +12,11 @@ package com.foro2.procesos;
 public class Tablet extends Equipo {
     
     private String diagonalPantalla;
-    private double capacitivaResistiva;
-    private double tamañoMemoriaNAND;
-    private double sistemaOperativo;
+    private String capacitivaResistiva;
+    private String tamañoMemoriaNAND;
+    private String sistemaOperativo;
     
-    public Tablet(String tamañoPantalla, double capacitivaResistiva, double tamañoMemoriaNAND, double sistemaOperativo, String fabricante, String modelo, String microprocesador) {
+    public Tablet(String tamañoPantalla, String capacitivaResistiva, String tamañoMemoriaNAND, String sistemaOperativo, String fabricante, String modelo, String microprocesador) {
         super(fabricante, modelo, microprocesador);
         this.diagonalPantalla = tamañoPantalla;
         this.capacitivaResistiva = capacitivaResistiva;
@@ -32,27 +32,27 @@ public class Tablet extends Equipo {
         this.diagonalPantalla = tamañoPantalla;
     }
     
-    public double getcapacitivaResistiva (){
+    public String getcapacitivaResistiva (){
         return capacitivaResistiva;
     }
     
-    public void setcapacitivaResistiva (double capacitivaResistiva){
+    public void setcapacitivaResistiva (String capacitivaResistiva){
         this.capacitivaResistiva = capacitivaResistiva;
     }
     
-    public double gettamañoMemoriaNAND (){
+    public String gettamañoMemoriaNAND (){ 
         return tamañoMemoriaNAND;
     }
     
-    public void settamañoMemoriaNAND (double tamañoMemoriaNAND) {
+    public void settamañoMemoriaNAND (String tamañoMemoriaNAND) {
         this.tamañoMemoriaNAND = tamañoMemoriaNAND;
     }
     
-    public double getsistemaOperativo (){
+    public String getsistemaOperativo (){
         return sistemaOperativo;
     } 
     
-    public void setsistemaOperativo (double sistemaOperativo){
+    public void setsistemaOperativo (String sistemaOperativo){
         this.sistemaOperativo = sistemaOperativo;
     }
     

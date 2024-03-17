@@ -124,9 +124,9 @@ public class Inventario {
 
         Tablet tablet = new Tablet(
                 diagonalPantalla,
-                Double.parseDouble(capacitivaResistiva),
-                Double.parseDouble(tamañoMemoriaNAND),
-                Double.parseDouble(sistemaOperativo),
+                capacitivaResistiva,
+                tamañoMemoriaNAND,
+                sistemaOperativo,
                 nombreFabricante,
                 nombreModelo,
                 microprocesador
