@@ -26,7 +26,7 @@ public class Inventario {
                 registrarTablet(equipos);
                 break;
         }
-    }
+    }  
 
     public void verEquipos(int opcionEquipo, List<Equipo> equipos) {
         switch (opcionEquipo) {
@@ -41,8 +41,7 @@ public class Inventario {
                 break;
         }
     }
-    
-    
+     
     private void registrarLaptop(List<Equipo> equipos) {
         String nombreFabricante = JOptionPane.showInputDialog("Ingrese el nombre del fabricante:");
         String nombreModelo = JOptionPane.showInputDialog("Ingrese el nombre del modelo:");
@@ -148,7 +147,7 @@ public class Inventario {
                 sb.append("<tr><td><strong>Fabricante:</strong></td><td>").append(desktop.getFabricante()).append("</td></tr>");
                 sb.append("<tr><td><strong>Modelo:</strong></td><td>").append(desktop.getModelo()).append("</td></tr>");
                 sb.append("<tr><td><strong>Microprocesador:</strong></td><td>").append(desktop.gettMicroprocesador()).append("</td></tr>");
-                sb.append("<tr><td><strong>Memoria:</strong></td><td>").append(desktop.getMemoria()).append("</td></tr>");
+                sb.append("<tr><td><strong>Memoria RAM:</strong></td><td>").append(desktop.getMemoria()).append("</td></tr>");
                 sb.append("<tr><td><strong>Tarjeta Gráfica:</strong></td><td>").append(desktop.getTarjetaGrafica()).append("</td></tr>");
                 sb.append("<tr><td><strong>Tamaño de la Torre:</strong></td><td>").append(desktop.getTamañoTorre()).append("</td></tr>");
                 sb.append("<tr><td><strong>Capacidad de Disco Duro:</strong></td><td>").append(desktop.getCapacidadDiscoDuro()).append("</td></tr>");
