@@ -33,10 +33,10 @@ public class Inventario {
         String nombreFabricante = JOptionPane.showInputDialog("Ingrese el nombre del fabricante:");
         String nombreModelo = JOptionPane.showInputDialog("Ingrese el nombre del modelo:");
         String microprocesador = JOptionPane.showInputDialog("Ingrese el microprocesador:");
-        String memoria = JOptionPane.showInputDialog("Ingrese la memoria:");
+        String memoria = JOptionPane.showInputDialog("Ingrese la memoria RAM:");
         String tarjetaGrafica = JOptionPane.showInputDialog("Ingrese la tarjeta gráfica:");
-        String tamañoTorre = JOptionPane.showInputDialog("Ingrese el tamaño de la torre:");
-        String capacidadDiscoDuro = JOptionPane.showInputDialog("Ingrese la capacidad del disco duro:");
+        String tamañoTorre = JOptionPane.showInputDialog("Ingrese el tamaño de la torre (En pulgadas):");
+        String capacidadDiscoDuro = JOptionPane.showInputDialog("Ingrese la capacidad del disco duro :");
     
         Desktop desktop = new Desktop(
                 memoria,
@@ -123,7 +123,7 @@ public class Inventario {
                 sb.append("<tr><td><strong>Fabricante:</strong></td><td>").append(desktop.getFabricante()).append("</td></tr>");
                 sb.append("<tr><td><strong>Modelo:</strong></td><td>").append(desktop.getModelo()).append("</td></tr>");
                 sb.append("<tr><td><strong>Microprocesador:</strong></td><td>").append(desktop.gettMicroprocesador()).append("</td></tr>");
-                sb.append("<tr><td><strong>Memoria:</strong></td><td>").append(desktop.getMemoria()).append("</td></tr>");
+                sb.append("<tr><td><strong>Memoria RAM:</strong></td><td>").append(desktop.getMemoria()).append("</td></tr>");
                 sb.append("<tr><td><strong>Tarjeta Gráfica:</strong></td><td>").append(desktop.getTarjetaGrafica()).append("</td></tr>");
                 sb.append("<tr><td><strong>Tamaño de la Torre:</strong></td><td>").append(desktop.getTamañoTorre()).append("</td></tr>");
                 sb.append("<tr><td><strong>Capacidad de Disco Duro:</strong></td><td>").append(desktop.getCapacidadDiscoDuro()).append("</td></tr>");
